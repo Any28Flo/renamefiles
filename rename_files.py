@@ -3,9 +3,13 @@ import os
 def rename_files() :
     #(1) get files names from a folder
     file_list = os.listdir(r"C:\Users\Anys\Documents\python\secretMessage\prank")
-    print (file_list)
+    #print (file_list)
+    saved_path = os.getcwd()
+    print("Current Working Directory is"+saved_path)
+    os.chdir(r"C:\Users\Anys\Documents\python\secretMessage\prank")
+
     #(2)for each file, rename filename
     for filename in file_list :
-        os.rename(filename)
+        print("Old name - "+filename)
         os.rename(filename, filename.translate(None, "0123456789"))
 rename_files()
